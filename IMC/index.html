@@ -1,34 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
+    <meta name="description" content="Calculadora de IMC moderna com classificacao, faixa saudavel de peso e recomendacoes basicas.">
+    <title>IMC Pro | Calculadora Inteligente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Cálculo IMC</h1>
-        <hr>
-    </header>
-    
-    
-    <div id="container">
-        <div class="img">
-            <img src="img/peso2.png" alt="imagem" srcset="">
-        </div>
-        <form id="formulario">
-        <label for="altura">Altura (ex: 1,70)</label>
-        <input type="number" name="altura" step="0.01"
-         id="altura" placeholder= "em metro(s)" required>
-        <label for="peso">Peso (ex: 60,00)</label>
-        <input type="number" name="peso" id="peso" placeholder="em quilograma(s)" required>
-        <input type="button" value="Calcular" onclick="calcularIMC()">       
-        <button type="reset">Limpar</button>                    
-    </form>
-    </div>  
-    <div id="mensagens"></div> 
+    <main class="page">
+        <section class="hero">
+            <p class="badge">Saude e Performance</p>
+            <h1>Calculadora de IMC Profissional</h1>
+            <p class="hero-text">
+                Descubra seu indice de massa corporal com uma experiencia moderna,
+                validacao inteligente e insights objetivos para tomada de decisao.
+            </p>
+        </section>
+
+        <section class="card" aria-label="Formulario de calculo de IMC">
+            <form id="imc-form" novalidate>
+                <div class="field">
+                    <label for="altura">Altura (m)</label>
+                    <input id="altura" name="altura" type="text" inputmode="decimal" placeholder="Ex.: 1,70" autocomplete="off" required>
+                </div>
+
+                <div class="field">
+                    <label for="peso">Peso (kg)</label>
+                    <input id="peso" name="peso" type="text" inputmode="decimal" placeholder="Ex.: 72,5" autocomplete="off" required>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn btn-primary">Calcular IMC</button>
+                    <button type="reset" class="btn btn-ghost">Limpar</button>
+                </div>
+
+                <p id="feedback" class="feedback" role="alert" aria-live="polite"></p>
+            </form>
+
+            <article id="result-card" class="result-card hidden" aria-live="polite">
+                <header>
+                    <p class="result-label">Seu resultado</p>
+                    <h2 id="classification">-</h2>
+                </header>
+                <div class="metrics">
+                    <div class="metric-item">
+                        <span>IMC</span>
+                        <strong id="imc-value">-</strong>
+                    </div>
+                    <div class="metric-item">
+                        <span>Faixa saudavel</span>
+                        <strong id="ideal-range">-</strong>
+                    </div>
+                </div>
+                <p id="recommendation" class="recommendation">-</p>
+            </article>
+        </section>
+    </main>
+
     <script src="scripts/index.js"></script>
 </body>
 </html>
