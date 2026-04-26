@@ -91,5 +91,4 @@ Depois acesse: [http://localhost:8080](http://localhost:8080)
 
 ## Licenca
 
-Voce pode definir a licenca conforme seu modelo de negocio.
-Se quiser liberar como open source, uma opcao comum e a licenca MIT.
+ licenca MIT.
